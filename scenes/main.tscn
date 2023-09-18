@@ -1,0 +1,192 @@
+[gd_scene load_steps=14 format=3 uid="uid://bxpy0qprgiado"]
+
+[ext_resource type="PackedScene" uid="uid://bjqjkb2x8y0o3" path="res://prefabs/base.tscn" id="1_vqmxg"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_ojq0v"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_ts5nv"]
+[ext_resource type="Script" path="res://scripts/buildingSelector.gd" id="4_nh0p7"]
+[ext_resource type="PackedScene" uid="uid://qd5270my5p6x" path="res://prefabs/building_a.tscn" id="4_p1elq"]
+[ext_resource type="PackedScene" uid="uid://br3njtstv4eki" path="res://prefabs/building_b.tscn" id="5_i52le"]
+[ext_resource type="PackedScene" uid="uid://dgkuhuwbsbox0" path="res://prefabs/road_straight.tscn" id="7_87wpe"]
+[ext_resource type="PackedScene" uid="uid://dp28r7wfkrysh" path="res://prefabs/road_corner.tscn" id="8_rkyte"]
+[ext_resource type="PackedScene" uid="uid://b3f8qutp2dwd7" path="res://prefabs/road_junction.tscn" id="9_n6tcu"]
+[ext_resource type="PackedScene" uid="uid://b2yyu61r8m8h0" path="res://prefabs/road_tsplit.tscn" id="10_rkay1"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_shhr3"]
+
+[sub_resource type="Sky" id="Sky_36d3w"]
+sky_material = SubResource("PhysicalSkyMaterial_shhr3")
+
+[sub_resource type="Environment" id="Environment_di8vy"]
+background_mode = 1
+background_color = Color(0.580392, 0.772549, 0.929412, 1)
+sky = SubResource("Sky_36d3w")
+ambient_light_source = 2
+ambient_light_color = Color(0.580392, 0.772549, 0.929412, 1)
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_sky_affect = 0.253
+fog_height = -0.5
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_di8vy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.596463, -0.599142, 0.534098, -1.7233e-16, 0.665426, 0.746464, -0.802641, -0.445238, 0.396902, 0, 1.48623, 0)
+shadow_enabled = true
+
+[node name="World" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0637293, 0, -0.0172143)
+
+[node name="Floor" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.08165e-12, -4)
+
+[node name="base" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+
+[node name="base2" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.08165e-12, 0)
+
+[node name="base3" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.08165e-12, 0)
+
+[node name="base4" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 0)
+
+[node name="base5" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.08165e-12, 0)
+
+[node name="base6" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="base7" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.08165e-12, 2)
+
+[node name="base8" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.08165e-12, 2)
+
+[node name="base9" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 2)
+
+[node name="base10" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.08165e-12, 2)
+
+[node name="base11" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="base12" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.08165e-12, 4)
+
+[node name="base13" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.08165e-12, 4)
+
+[node name="base14" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 4)
+
+[node name="base15" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.08165e-12, 4)
+
+[node name="base16" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="base17" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.08165e-12, 6)
+
+[node name="base18" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.08165e-12, 6)
+
+[node name="base19" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 6)
+
+[node name="base20" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.08165e-12, 6)
+
+[node name="base21" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="base22" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.08165e-12, 8)
+
+[node name="base23" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.08165e-12, 8)
+
+[node name="base24" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.08165e-12, 8)
+
+[node name="base25" parent="World/Floor" instance=ExtResource("1_vqmxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.08165e-12, 8)
+
+[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("2_ojq0v")
+camera = NodePath("../View/Camera")
+
+[node name="View" type="Node3D" parent="."]
+script = ExtResource("3_ts5nv")
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 7)
+keep_aspect = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.907
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.43993
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 100)
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("4_p1elq")
+player = NodePath("../../../Player")
+
+[node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("5_i52le")
+player = NodePath("../../../Player")
+
+[node name="Button3" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("7_87wpe")
+player = NodePath("../../../Player")
+
+[node name="Button4" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("8_rkyte")
+player = NodePath("../../../Player")
+
+[node name="Button5" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("9_n6tcu")
+player = NodePath("../../../Player")
+
+[node name="Button6" type="Button" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("player")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_nh0p7")
+building = ExtResource("10_rkay1")
+player = NodePath("../../../Player")

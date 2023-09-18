@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjqjkb2x8y0o3"]
+
+[ext_resource type="PackedScene" uid="uid://baummd8cnxun0" path="res://addons/kaykit_city_builder_bits/Assets/gltf/base.gltf" id="1_vc0bg"]
+[ext_resource type="Script" path="res://scripts/Base.gd" id="2_u4whs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eqwui"]
+size = Vector3(2, 0.1, 2)
+
+[node name="base" instance=ExtResource("1_vc0bg")]
+
+[node name="Base" type="StaticBody3D" parent="base2" index="0"]
+script = ExtResource("2_u4whs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base2/Base" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.05, 2.08165e-12)
+shape = SubResource("BoxShape3D_eqwui")
